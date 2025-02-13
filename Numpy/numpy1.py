@@ -91,16 +91,175 @@ b1[0]=34
 
 #------------------------Loops Vs Vectorization----------------------------------------------------->
 #-----------------using built in functions----------------------->
-daily_users=[200,220,250,275]
-print(sum(daily_users)/len(daily_users))
-#--------------------usng loops--------------------------------->
-num_user=0
-sum_user=0
-for i in range(len(daily_users)):
-    num_user+=1
-    sum_user+=daily_users[i]
-print(f"avg users : {sum_user/num_user}")
+# daily_users=[200,220,250,275]
+# print(sum(daily_users)/len(daily_users))
+# #--------------------usng loops--------------------------------->
+# num_user=0
+# sum_user=0
+# for i in range(len(daily_users)):
+#     num_user+=1
+#     sum_user+=daily_users[i]
+# print(f"avg users : {sum_user/num_user}")
 
-#-----------------------Using Vectorization---------------------------->
-np_daily_users=np.array(daily_users)
-print(np.mean(np_daily_users))
+# #-----------------------Using Vectorization---------------------------->
+# np_daily_users=np.array(daily_users)
+# print(np.mean(np_daily_users))
+
+# monthly_sales=[200,220,250,275,300,320,350,370,400,420,450,475]
+# #--------------Using Loops----------------------->
+# updated_monthly_sales=[]
+# for sale in monthly_sales:
+#     updated_monthly_sales.append(sale-sale*0.1)
+
+# print(updated_monthly_sales)
+
+# #------------------Using Vectorization----------------------------------->
+# np_monthly_sales=np.array(monthly_sales)
+# updated_np__monthly_sales=np_monthly_sales*0.9
+# print(updated_np__monthly_sales)
+
+# np_array=np.arange(10,20)
+# print(np_array.reshape(2,5))
+
+
+#------------------Universal functions------------------------------------>
+
+"""
+arithmetic-add,subtract,division,multiply
+trignometry and logarithmic- sin,cos,exp,log
+less_than,greater
+
+    """
+# complete_square=[4,9,16,25,36,49,64]
+# sqr_root=np.sqrt(complete_square)
+# print(sqr_root)
+# import random
+# revenues=np.array([1210, 1059, 1177, 1477 ,1173 ,1014, 1358 ,1028 ,1410, 1251 ,1282 ,1436])
+# expenses=np.array([1769, 2493 ,1891 ,2290 ,2152 ,2483 ,1997 ,2166 ,1587 ,1639 ,2006 ,1782])
+# print(revenues)
+# print(expenses)
+# print(expenses[np.less_equal(expenses,2000)])
+# print(expenses[np.greater(expenses,2000)])
+
+#-------------------Using vectorize------------------------------------->
+# def nps(score):
+#     if(score>10):
+#         return ("promoter")
+#     elif(score>=7):
+#         return ("refractor")
+#     else:
+#         return ("defractor")
+
+# scores=np.random.randint(1,15,7)
+# print(scores)
+# nps_func=np.vectorize(nps)
+# print(nps_func(scores))
+
+
+
+
+
+#-------------------other fucntions----------------------------------->
+# scores=np.array([55,57,89,78,70,90,98,97,84,82])
+# eligibility=np.where(scores>75,"yes","No")
+# print(eligibility)
+
+
+# l1=np.random.randint(100,150,6)
+# l2=np.random.randint(135,167,6)
+# print(l1)
+# print(l2)
+# print(l1[l1>130])
+
+# def is_vote(age):
+#     if(age>18):
+#       return "Eligible for vote "
+#     else:
+#       return "Not eligible for vote"
+# ufs_score=np.vectorize(is_vote)
+age_list=np.array([12,15,18,67,45,12,21,1,12,14,16])
+# print(ufs_score(vote_list))
+
+
+#------------Ternary Operator--------------------->
+import random
+
+trf_chr = np.array([
+    # 7 Primes
+    "Optimus Prime",
+    "Alpha Trion",
+    "Vector Prime",
+    "Solus Prime",
+    "Onyx Prime",
+    "Megatronus (The Fallen)",
+    "Micronus Prime",
+
+    # Other Transformers Characters
+    "Megatron",
+    "Bumblebee",
+    "Arcee",
+    "Ratchet",
+    "Bulkhead",
+    "Wheeljack",
+    "Starscream",
+    "Soundwave",
+    "Knock Out",
+    "Shockwave",
+    "Grimlock",
+    "Blackarachnia",
+    "Ultra Magnus",
+    " Arcadius Prime"
+])
+
+# Shuffle the list
+# random.shuffle(trf_chr)
+# is_eligible=np.where(age_list>=18,"eligible","not eligible")
+# print(is_eligible)
+# marks=np.random.randint(40,100,10)
+# print(marks)
+# is_eligible_marks=np.where((marks>=70)&(marks<=80),"eligible","not eligible")
+# print(is_eligible_marks)
+
+
+# marks_list=np.array([56,78,79,89,90,98,56,34,77,65,76,88,84,81,46,55,69])
+jutsu_level=np.random.randint(20,100,16)
+# print(jutsu_level)
+# bankai_list=np.where((marks_list>=80) & (marks_list<=90) ,"Bankai","Shadow_Clone_Jutsu")
+# print(bankai_list)
+# #use brackets to differentiate between condition
+# print(marks_list[(marks_list>=70) &(marks_list<=80)])
+
+# jutsu_list=np.where(jutsu_level>80,"Infinite_Tsukuyomi",np.where(jutsu_level>40,"Wind_Style_Rasen_Shruiken","Amatersau"))
+# print(jutsu_list)
+# #--------------Reshaping the arrays---------------------------->
+# print(jutsu_level.reshape(4,4))
+
+# jutsu_level=jutsu_level.reshape(2,-1,)
+# print(jutsu_level.flatten())
+# #syntax array_name.reshape(num_rows,num_cols)
+# print(jutsu_level.ravel())
+# #------Both returned the flattened array but flatten returns the copy and ravel returns the reference that is it changes the original array
+
+#------------------Transpose of the matrix--------------------------->
+matrix=np.random.randint(1,100,25)
+# print(matrix)
+# transpose_matrix=np.transpose(matrix)
+# #or
+# transpose_matrix=matrix.T
+# print(transpose_matrix)
+
+
+#-----------Resizing the array-------------------------------->
+#it is used to change the size of the array and fill the array with random values
+# print(matrix)
+# print(matrix.reshape(5,5))
+# print(np.resize(matrix,(7,5)))
+
+
+
+#-----------Concatenating and splitting array------------------------------->
+matrix2=np.random.randint(100,140,10)
+matrix3=np.random.randint(200,240,10)
+print(np.concatenate((matrix,matrix2)))
+print(np.vstack((matrix3,matrix2)))
+print(np.hstack((matrix3,matrix2)))

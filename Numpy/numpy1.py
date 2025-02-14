@@ -185,16 +185,13 @@ age_list=np.array([12,15,18,67,45,12,21,1,12,14,16])
 import random
 
 trf_chr = np.array([
-    # 7 Primes
     "Optimus Prime",
     "Alpha Trion",
     "Vector Prime",
     "Solus Prime",
     "Onyx Prime",
     "Megatronus (The Fallen)",
-    "Micronus Prime",
-
-    # Other Transformers Characters
+    "Micronus Prime"
     "Megatron",
     "Bumblebee",
     "Arcee",
@@ -258,8 +255,8 @@ matrix=np.random.randint(1,100,25)
 
 
 #-----------Concatenating and splitting array------------------------------->
-matrix2=np.random.randint(100,140,10)
-matrix3=np.random.randint(200,240,10)
-print(np.concatenate((matrix,matrix2)))
-print(np.vstack((matrix3,matrix2)))
-print(np.hstack((matrix3,matrix2)))
+# matrix2=np.random.randint(100,140,10)
+# matrix3=np.random.randint(200,240,10)
+# print(np.concatenate((matrix,matrix2)))
+# print(np.vstack((matrix3,matrix2)))
+# print(np.hstack((matrix3,matrix2)))

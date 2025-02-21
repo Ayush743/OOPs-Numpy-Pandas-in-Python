@@ -260,3 +260,127 @@ matrix=np.random.randint(1,100,25)
 # print(np.concatenate((matrix,matrix2)))
 # print(np.vstack((matrix3,matrix2)))
 # print(np.hstack((matrix3,matrix2)))
+"""
+what is Numpy ?
+it is a python library for creating N dimensional arrays
+ 
+#     """
+
+# my_matrix=[[1,2,23],[2,324,44],[32,42,42]]
+# print(np.array(my_matrix))
+
+# arange=np.arange(1,20,4)
+# print(arange)
+
+# zeros=np.zeros((5,5))
+# print(zeros)
+
+# ones=np.ones((5,3))
+# print(ones)
+
+
+# linspace=np.linspace(1,20,7)
+# print(linspace)
+
+
+# identiy=np.eye(4)
+# print(identiy)
+
+# random_arr=np.random.randint(1,10,(5,3))
+# print(random_arr)
+
+# np.random.seed(32)
+# print(np.random.rand(4))
+
+
+# random_matrix=np.random.randint(0,20,(4,5))
+# print(random_matrix.min())
+# print(random_matrix.reshape(5,4))
+
+
+# #------------ indexing and selection------------------->
+# # arr=np.arange(0,11)
+# # arr[:5]=23# broadcasting
+# # print(arr)
+
+
+# # arr1=np.arange(20,31)
+# # arr2=arr1[:5] # its acts as a reference to original array and any changes made to this array will be reflected in the orignal array
+# # arr2[:]=55
+# # print(arr2)
+# # print(arr1)
+# # # to resolve this we create a copy
+# # a=np.arange(10)
+# # a_copy=a.copy()
+# # a_copy[:]=55
+# # print(a_copy)
+# # print(a)
+
+
+# array_2d=np.array([[1,2,4],[7,43,3],[424,42,2]])
+# # to select a single row
+# first_row=array_2d[0]
+# print(first_row)
+# last_row=array_2d[-1]
+# print(last_row)
+
+# print(array_2d[2,1])
+
+
+
+# print(array_2d[:2,:2])
+# print(array_2d[1:,:2])
+# print(array_2d[:2,1:])
+
+
+# arr=np.arange(11)
+# print(arr[arr>5])
+
+
+
+#-----------numpy operations and functions----->
+arr=np.arange(11)
+#print(arr+4)
+#mean,mode,sin,log,sum,var,std
+
+
+# arr_2d=np.arange(10,35).reshape(5,5)
+# print(arr_2d.sum(axis=0))
+# print(arr_2d.sum(axis=1))
+# arr1=np.arange(1,10).reshape(3,3)
+# print(arr1.sum(axis=0))
+# print(arr1.sum(axis=1))
+
+
+
+#------------------Numpy exercise-------------------------------------->
+
+# array_zeroes=np.zeros(10)
+# array_ones=np.ones(10)
+# print(array_zeroes)
+# print(array_ones)
+# array_fives=np.ones(10)*5
+# print(array_fives)
+# array_1_to_50=np.arange(10,51)
+# print(array_1_to_50)
+# array_even_1_to_50=np.arange(10,51,2)
+# print(array_even_1_to_50)
+
+# matrix_3=np.arange(0,9).reshape(3,3)
+# print(matrix_3)
+# identity_matrix=np.eye(3)
+# print(identity_matrix)
+
+# print(np.random.randn(25))
+# print(np.arange(0.01,1.01,0.01).reshape(10,10))
+# print(np.linspace(0,1,20))
+
+# arr=np.arange(1,26).reshape(5,5)
+# print(arr)
+# print(arr[2:,1:])
+# print(arr[3,4])
+# print(arr[:3,1:2])
+# print(arr[3:])
+# print(arr.sum())
+# print(arr.sum(axis=0))
+# print(arr.std())

@@ -72,6 +72,59 @@ not_div_7=z1[z1%7!=0]
 #----------Broadcasting--------------------------------------->
 q1=np.arange(12).reshape(3,4)
 q2=np.arange(4).reshape(1,4)
-print(q1)
-print(q2)
-print(q1+q2)
+# print(q1)
+# print(q2)
+# print(q1+q2)
+# q3=np.arange(3).reshape(1,3)
+# q4=np.arange(3).reshape(3,1)
+# # print(q3+q4)
+# a1=np.random.randint(10,20,(1,3))
+# a2=np.random.randint(10,20,(3,1))
+# print(a1+a2)
+
+"""------ user defined mathematical functions"""
+def sigmoid(arr):
+    print(1/(1+np.exp(-(arr)))) 
+#sigmoid(np.arange(1,10))
+
+def mse(act,pred):
+    print(np.mean((act-pred)**2))
+a=np.random.randint(1,10,10)
+b=np.random.randint(1,10,10)
+#mse(a,b)
+
+
+"""----------Handling Missing values---------------------"""
+x1=np.array([1,2,3,np.nan,np.nan,np.nan])
+print(x1[~(np.isnan(x1))])
+# print(x1)
+# r_list=np.array([2,4,5,6,3,53,43,43,np.nan,np.nan,np.nan])
+# missing_values=np.isnan(r_list)
+# print(sum(missing_values))
+# print(np.nan_to_num(r_list))
+# print(np.nanmean(r_list))
+# print(np.nanmedian(r_list))
+
+# np_mean_data=np.where(np.isnan(r_list),np.nanmean(r_list),r_list)
+# print(np_mean_data)
+
+# data_without_nan=r_list[~np.isnan(r_list)]
+# print(data_without_nan)
+
+# #_____----------Roll function------->
+# test_data=np.array([1,2,3,4,np.nan,6,7])
+# mask=np.isnan(test_data)
+# test_data[mask]=np.roll(test_data,shift=1)[mask]
+# print(test_data)
+
+"""plotting"""
+import matplotlib.pyplot as plt
+x=np.linspace(-10,10,100)
+# y=1/(1+np.exp(-(x)))
+# y=x**2
+# y=np.sin(x)
+# y=x*np.log(x)
+# print(x)
+# print(y)
+plt.plot(x,y)
+plt.show()

@@ -80,4 +80,40 @@ def norm(group):
     group["norm_rating"]=(group["IMDB_Rating"]-group["IMDB_Rating"].min())/(group["IMDB_Rating"].max()-group["IMDB_Rating"].min())
     return group
 
-print(genres.apply(norm)[['Series_Title','norm_rating']].sample(30))
+# print(genres.apply(norm)[['Series_Title','norm_rating']].sample(30))
+
+
+"""groupby on multiple columns"""
+act_dir=movies.groupby(["Director","Star1"])
+# print(duo.size())
+# print(duo.get_group(("Aaron Sorkin","Eddie Redmayne")))
+# print(act_dir["Gross"].sum().sort_values(ascending=False).head(1))
+act_gen=movies.groupby(["Star1","Genre"])
+# print(act_gen["Metascore"].mean().reset_index().sort_values("Metascore",ascending=False).head(1))
+# print(act_dir.agg(
+#     {
+#          'Runtime':  ["min","max","mean"],
+#           'IMDB_Rating':  ["min","max","mean"],
+#          'No_of_Votes':  ["min","max","mean"],
+#         'Gross':  ["min","max","mean"],
+#           'Metascore':  ["min","max","mean"],
+#     }
+#   ))
+
+ipl=pd.read_csv("OOPs-Numpy-Pandas-in-Python/Pandas/pandas2/datasets/deliveries.csv")
+print(ipl.columns)
+batsman=ipl.groupby("batsman")
+# print(batsman["batsman_runs"].sum().reset_index().sort_values("batsman_runs",ascending=False))
+ipl_6=ipl[ipl["batsman_runs"]==6]
+# print(ipl_6.groupby("batsman")['batsman_runs'].count().sort_values(ascending=False))
+ipl_4_6=ipl[(ipl['over']>15) & ((ipl["batsman_runs"]==4) | (ipl["batsman_runs"]==6))]
+# print(ipl_4_6[['batsman','over','batsman_runs']])
+# print(ipl_4_6.groupby("batsman")["batsman"].count().sort_values(ascending=False))
+temp_df=ipl[ipl['batsman']=="AB de Villiers"]
+# print(temp_df.groupby('bowling_team')['batsman_runs'].sum().reset_index())
+
+def highscore(player):
+    temp_df=ipl[ipl['batsman']==player]
+    return temp_df.groupby("match_id")['batsman_runs'].sum().reset_index().sort_values("batsman_runs",ascending=False).head(1).values[0][1]
+rec=highscore("AB de Villiers")
+print(rec)
